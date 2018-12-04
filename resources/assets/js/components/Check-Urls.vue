@@ -1,10 +1,36 @@
 <template>
 	<div>
 		<div class="row">
-			<button class="btn btn-success" @click.prevent="toggleSuccessful( true )" v-if="!hideSuccessful">Hide Successful</button>
-			<button class="btn btn-warning" @click.prevent="toggleSuccessful( false )" v-else>Show Successful</button>
+			<a 
+				href="/"
+				class="btn btn-info"
+			>
+				<i class="glyphicon glyphicon-home"></i>
+				Home
+			</a>
+			<button 
+				class="btn btn-success" 
+				@click.prevent="toggleSuccessful( true )" 
+				v-if="!hideSuccessful"
+			>
+				<i class="glyphicon glyphicon-eye-close"></i>
+				Hide Successful
+			</button>
+			<button 
+				class="btn btn-warning" 
+				@click.prevent="toggleSuccessful( false )" 
+				v-else
+			>
+				<i class="glyphicon glyphicon-eye-open"></i>
+				Show Successful
+			</button>
 		</div>
-		<check-url v-for="(url, index) in urls_array" :key="index" :url="url" :hideSuccessful="hideSuccessful"></check-url>
+		<check-url 
+			v-for="(url, index) in urls_array" 
+			:key="index" 
+			:url="url" 
+			:hideSuccessful="hideSuccessful"
+		></check-url>
 	</div>
 </template>
 

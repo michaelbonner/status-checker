@@ -6,7 +6,13 @@
 			<textarea class="form-control" name="urls" id="url-container" placeholder="Paste in a list of urls to test, one per line" rows="20"></textarea>
 		</div>
 		{{ csrf_field() }}
-		<button type="submit" class="btn btn-primary">Check These URLs</button>
+		<button 
+			type="submit" 
+			class="btn btn-primary"
+		>
+			Check These URLs
+			<i class="glyphicon glyphicon-play-circle"></i>
+		</button>
 	</form>
 
 	<div style="text-align:left">
