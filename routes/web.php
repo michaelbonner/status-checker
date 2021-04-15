@@ -11,11 +11,26 @@
 |
 */
 
+use App\Http\Controllers\HttpStatusChecker;
+use App\Http\Controllers\PageController;
+
 Route::get('/', function () {
 	return view('enter-urls');
 });
 
-Route::post('/check-urls', 'PageController@check_urls' );
+Route::post('/check-urls', [
+	PageController::class,
+	'check_urls'
+]);
 
-Route::post('check_status', 'HttpStatusChecker@check_status' );
-Route::get('check_status/{url}', 'HttpStatusChecker@check_status' );
+Route::post('check_status', [
+	HttpStatusChecker::class,
+	'check_status'
+]);
+Route::get(
+	'check_status/{url}',
+	[
+		HttpStatusChecker::class,
+		'check_status'
+	]
+);
